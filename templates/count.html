@@ -1,0 +1,9 @@
+<h1>Let's count the words<h1>
+<a href="{% url "home" %}"><button type="button" name="Back To Home">Back To Home</button></a>
+<h1> There are {{count}}  words in the line/paragraph</h1>
+{{ fulltext }}
+
+<h1> Word Count </h1>
+{% for word, counttotal in sortedwords %}
+{{ word }} - {{ counttotal }}
+{% endfor %}
