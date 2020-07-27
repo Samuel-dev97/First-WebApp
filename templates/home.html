@@ -1,11 +1,15 @@
 <head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <style media="screen">
   .center{
     text-align:center
   }
   </style>
-</style>
 </head>
+
+{% load static %}
+<body style="background: url('{% static 'wordcounter_project/back_img.jpg' %}')");>
 
 <h2 class="center">WORD COUNT<h2>
 <form class= "center" action="{% url 'count' %}">
@@ -14,3 +18,4 @@
   <input type="submit" value="count!"/>
   <a href="{% url "about" %}"><button type="button" name="about">About this Page</button></a>
 </form>
+</body>

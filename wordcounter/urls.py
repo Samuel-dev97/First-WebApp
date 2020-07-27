@@ -15,10 +15,16 @@ Including another URLconf
 """
 
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 from . import views
+
+
 urlpatterns = [
     path('', views.HomePage, name="home"),
     path('count/', views.counts, name="count"),
     path('about/', views.about, name="about")
 
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
