@@ -1,7 +1,21 @@
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+{% load static %}
 
-<h1>Let's count the words<h1>
-<a href="{% url "home" %}"><button type="button" name="Back To Home">Back To Home</button></a>
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+  #bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+  }
+  </style>
+</head>
+
+<body id="bg" style="background-image: url('{% static 'wordcounter_project/back_img.jpg' %}')";>
+<Center><h1>Let's count the words<h1>
+<a href="{% url "home" %}"><button class="btn btn-primary" type="button" name="Back To Home">Back To Home</button></a>
 <h1> There are {{count}}  words in the line/paragraph</h1>
 {{ fulltext }}
 
@@ -9,3 +23,6 @@
 {% for word, counttotal in sortedwords %}
 {{ word }} - {{ counttotal }}
 {% endfor %}
+</center>
+</body>
+</html>

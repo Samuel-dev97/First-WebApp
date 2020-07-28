@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype HTML>
 
 <html>
@@ -6,22 +8,26 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    @media screen and (max-width: 650px) {
+
+      @media screen and (max-width: 650px) {
   .column {
     width: 100%;
     display: block;
-
-    .img{
-      background-image: url('images/word-counter.jpg')
-    }
-
-  </style>
+  }
+  #bg{
+    background-size: 1800px 900px;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+</style>
 </head>
-<body>
+
+<body id="bg" style="background-image: url('{% static 'wordcounter_project/back_img.jpg' %}')";>
     <div> <h1> <center>This is the word count page</center></h1> </div>
     <div> <h1> <center>This is Aishwary and I have created this website to count the words </center></h1> </div>
     <div> <h3> <center>The most common words have the highest number</center> </h3>
     <div> <h3><center>Let's start counting</center> </h3> </div>
-  <div> <center> <a href="{% url "home" %}"><button type="button" name="Back To Home">Back To Home</button></a> </center> </div>
+  <div> <center> <a href="{% url "home" %}"><button class="btn btn-primary" type="button" name="Back To Home">Back To Home</button></a> </center> </div>
   </body>
 </html>
